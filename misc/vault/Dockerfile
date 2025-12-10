@@ -9,5 +9,6 @@ COPY /scripts /usr/local/bin/ebsco/scripts
 
 RUN chmod 500 /usr/local/bin/ebsco/scripts/*
 RUN chmod 400 /usr/local/bin/ebsco/config/*
+RUN chown -R vault /usr/local/bin/ebsco
 
 ENTRYPOINT [ "/usr/local/bin/ebsco/scripts/start.sh" ]
