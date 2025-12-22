@@ -6,6 +6,7 @@ FROM hashicorp/vault:$VAULT_VERSION
 
 RUN apk update && apk add --no-cache curl jq coreutils shadow
 
+RUN cat /etc/passwd
 RUN usermod -u ${PUID} vault
 COPY ./config /usr/local/bin/ebsco/config
 COPY ./scripts /usr/local/bin/ebsco/scripts
