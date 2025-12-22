@@ -7,7 +7,6 @@ FROM hashicorp/vault:$VAULT_VERSION
 RUN apk update && apk add --no-cache curl jq coreutils
 
 RUN deluser vault
-RUN deluser --group vault
 RUN addgroup -g ${PGID} vault
 RUN adduser -S -u ${PUID} -G vault vault
 
