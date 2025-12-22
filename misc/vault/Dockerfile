@@ -4,7 +4,7 @@ ARG PGID=1234
 
 FROM hashicorp/vault:$VAULT_VERSION
 
-RUN apk update && apk add --no-cache curl jq coreutils
+RUN apk update && apk add --no-cache curl jq coreutils shadow
 
 COPY ./config /usr/local/bin/ebsco/config
 COPY ./scripts /usr/local/bin/ebsco/scripts
