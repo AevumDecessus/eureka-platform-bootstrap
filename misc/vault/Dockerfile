@@ -1,10 +1,11 @@
 ARG VAULT_VERSION=1.13.3
 ARG PUID=1234
 ARG PGID=1234
-ENV PUID=$PUID
-ENV PGID=$PGID
 
 FROM hashicorp/vault:$VAULT_VERSION
+
+ENV PUID=$PUID
+ENV PGID=$PGID
 
 RUN apk update && apk add --no-cache curl jq coreutils
 
